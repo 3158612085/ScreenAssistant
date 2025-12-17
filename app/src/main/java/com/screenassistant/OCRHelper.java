@@ -7,7 +7,7 @@ import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.text.Text;
 import com.google.mlkit.vision.text.TextRecognition;
 import com.google.mlkit.vision.text.TextRecognizer;
-import com.google.mlkit.vision.text.chinese.ChineseTextRecognizerOptions;
+import com.google.mlkit.vision.text.latin.TextRecognizerOptions;
 
 public class OCRHelper {
     private Context context;
@@ -20,7 +20,7 @@ public class OCRHelper {
 
     public OCRHelper(Context context) {
         this.context = context;
-        recognizer = TextRecognition.getClient(new ChineseTextRecognizerOptions.Builder().build());
+        recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS);
     }
 
     public void recognizeText(Bitmap bitmap, OCRCallback callback) {
